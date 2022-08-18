@@ -25,24 +25,24 @@ const Product = ({ product }) => {
 				<div className="container">
 					<div className="product">
 						<div className="information">
-							<h1>{`${product.title} | ${product.brand}`}</h1>
-							<p>{`Description : ${product.description}`}</p>
+							<h1>{`${product?.title} | ${product?.brand}`}</h1>
+							<p>{`Description : ${product?.description}`}</p>
 							<p className="price">{`From ${
 								product.price
 							}$ to ${originalPrice.toFixed(0)}$`}</p>
-							<p>{`-${product.discountPercentage}%`}</p>
-							<p>{`Rating : ${product.rating}`}</p>
+							<p>{`-${product?.discountPercentage}%`}</p>
+							<p>{`Rating : ${product?.rating}`}</p>
 							<button>Buy from the cheapest seller</button>
 						</div>
 						<div className="images">
 							<img
 								className="selected-image"
-								alt={product.title}
+								alt={product?.title}
 								src={selectedImage}
 							/>
 							<div className="image-gallery">
-								{product.images.length !== null &&
-									product.images.map((img, index) => {
+								{
+									product.images?.map((img, index) => {
 										return (
 											<img
 												key={index}
@@ -52,7 +52,7 @@ const Product = ({ product }) => {
 														: ""
 												}`}
 												src={img}
-												alt={product.title}
+												alt={product?.title}
 												onClick={() =>
 													handleSelectedImage(img)
 												}

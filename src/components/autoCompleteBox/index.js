@@ -10,12 +10,9 @@ const AutoCompleteBox = (props) => {
 	); //Create this state to set selected option
 
 	//Create this variable to get options whit search filter
-	const options =
-		props.products.length !== 0
-			? props.products.filter((product) =>
-					product.title.toLowerCase().includes(value.toLowerCase())
-			  )
-			: [];
+	const options = props.products?.filter((product) =>
+		product?.title.toLowerCase().includes(value.toLowerCase())
+	);
 
 	//Create this function to control input change
 	const handleChange = (e) => {
@@ -33,7 +30,9 @@ const AutoCompleteBox = (props) => {
 	return (
 		<div className="select-box-container">
 			<h1 className="title">Welcome to prices checker</h1>
-			<p className="title">Check it out, Compare prices, Enjoy shopping</p>
+			<p className="title">
+				Check it out, Compare prices, Enjoy shopping
+			</p>
 			<div
 				className="selected-option"
 				onClick={() => setShowOptions(!showOptions)}
@@ -48,21 +47,17 @@ const AutoCompleteBox = (props) => {
 						onChange={(e) => handleChange(e)}
 						placeholder="Select a product to show this details..."
 					/>
-					{options.length !== 0
-						? options.map((option) => {
-								return (
-									<div
-										key={option.id}
-										className="option"
-										onClick={() =>
-											handleSelectedOption(option)
-										}
-									>
-										<p>{option.title}</p>
-									</div>
-								);
-						  })
-						: ""}
+					{options?.map((option) => {
+						return (
+							<div
+								key={option?.id}
+								className="option"
+								onClick={() => handleSelectedOption(option)}
+							>
+								<p>{option?.title}</p>
+							</div>
+						);
+					})}
 				</div>
 			)}
 		</div>
