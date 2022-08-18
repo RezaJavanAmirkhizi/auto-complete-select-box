@@ -1,0 +1,36 @@
+.theme-container{
+    width: 100%;
+    @include r-flex;
+    align-items: left;
+    color: var(--font-color);
+    gap: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 10px;
+
+    .handler {
+        width: 50px;
+        border-radius: 10px;
+        background-color: var(--secondary-color);
+        height: 20px;
+        position: relative;
+        @include r-flex;
+        justify-content: center;
+
+        .switch {
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            position: absolute;
+            left: 2px;
+            cursor: pointer;
+            transition: all 0.5s linear;
+        }
+
+        .switch.light{
+            left: 32px;
+        }
+    }
+}
