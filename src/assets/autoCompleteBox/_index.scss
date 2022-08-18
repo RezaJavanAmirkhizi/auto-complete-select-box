@@ -1,0 +1,112 @@
+/* Auto complete select box styles */
+.select-box-container {
+	width: 100%;
+	min-height: 150px;
+	@include c-flex;
+	justify-content: center;
+	padding: 50px 0;
+	gap: 5px;
+	transition: min-height 1s ease-out;
+	color: var(--font-color);
+
+	.title {
+		width: 50%;
+		text-align: left;
+		margin-bottom: 20px;
+	}
+
+	.selected-option {
+		width: 50%;
+		@include r-flex;
+		justify-content: space-around;
+		border: var(--font-color) solid 2px;
+		border-radius: 14px;
+		font-size: 18px;
+		padding: 20px 0;
+		box-sizing: border-box;
+		cursor: pointer;
+
+		p {
+			width: 80%;
+			font-size: 24px;
+		}
+	}
+
+	.options {
+		width: 50%;
+		@include c-flex;
+		justify-content: space-around;
+		background-color: var(--font-color);
+		padding: 20px 0;
+		border-radius: 14px;
+		box-sizing: border-box;
+
+		input {
+			width: 90%;
+			padding: 10px 5px;
+			font-size: 16px;
+			box-sizing: border-box;
+			margin-bottom: 10px;
+		}
+
+		.option {
+			@include c-flex;
+			align-items: flex-start;
+			justify-content: center;
+			width: 90%;
+			padding: 10px;
+			box-sizing: border-box;
+			cursor: pointer;
+			color: var(--bg-color);
+
+			p {
+				font-size: 16px;
+			}
+
+			&:hover {
+				background-color: var(--bg-color);
+				color: var(--font-color);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1240px) {
+	.select-box-container {
+		.title,
+		.selected-option,
+		.options {
+			width: 60%;
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.select-box-container {
+		.title,
+		.selected-option,
+		.options {
+			width: 65%;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.select-box-container {
+		.title,
+		.selected-option,
+		.options {
+			width: 75%;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.select-box-container {
+		.title,
+		.selected-option,
+		.options {
+			width: 90%;
+		}
+	}
+}
