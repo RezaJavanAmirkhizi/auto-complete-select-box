@@ -28,7 +28,7 @@
 
 		p {
 			width: 80%;
-			font-size: 24px;
+			font-size: 22px;
 		}
 	}
 
@@ -107,6 +107,12 @@
 		.selected-option,
 		.options {
 			width: 90%;
+		}
+
+		.options{
+			input{
+				font-size: 13px;
+			}
 		}
 	}
 }
